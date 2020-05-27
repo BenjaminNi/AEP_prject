@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>AEP - A-Frame</title>
+    <meta name="description" content="AEP - A-Frame">
+    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-animation-component@^4.1.2/dist/aframe-animation-component.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+
+      <a-entity particle-system="preset: dust; particleCount: 10000"></a-entity>
+
+      <a-assets>
+        <img id="torus" src="https://live.staticflickr.com/6066/6080054314_a49e421953_b.jpg"/>
+        <img id="dodec" src="https://live.staticflickr.com/5185/5569167233_3f29261795_b.jpg"/>
+        <img id="dode2" src="https://live.staticflickr.com/8456/8063392194_4a0a54567f_b.jpg"/>
+      
+      </a-assets>
+
+      <a-entity id="lightcylinder" geometry="primitive: cylinder; height: 100; radius: 0.2" position="-2 0.75 -3" rotation=" -10 0 0" material="shader: flat" light="type: point; color: #FFF"
+      animation="property: scale; dir: alternate; dur: 100; to: 1.1 1.1 1.1; loop: true"></a-entity>
+      <a-entity id="lightcylinder" geometry="primitive: cylinder; height: 100; radius: 0.2" position="4 1 -6" rotation=" 20 20 0" material="shader: flat" light="type: point; color: #FFF"
+      animation="property: scale; dir: alternate; dur: 100; to: 1.1 1.1 1.1; loop: true"></a-entity>
+      <a-entity id="lightcylinder" geometry="primitive: cylinder; height: 95; radius: 0.2" position="10 2 -12" rotation=" -20 10 20" material="shader: flat" light="type: point; color: #FFF"
+      animation="property: scale; dir: alternate; dur: 100; to: 1.1 1.1 1.1; loop: true"></a-entity>
+      <a-entity id="lightcylinder" geometry="primitive: cylinder; height: 95; radius: 0.2" position="4 1 6" rotation=" 1800 10 20" material="shader: flat" light="type: point; color: #FFF"
+      animation="property: scale; dir: alternate; dur: 100; to: 1.1 1.1 1.1; loop: true"></a-entity>
+      <a-entity id="lightcylinder" geometry="primitive: cylinder; height: 95; radius: 0.2" position="10 2 -6" rotation=" -20 10 40" material="shader: flat" light="type: point; color: #FFF"
+      animation="property: scale; dir: alternate; dur: 100; to: 1.1 1.1 1.1; loop: true"></a-entity>
+
+      <a-entity id="torusknot" geometry="primitive: torusKnot" scale="1 1 1" position="-4 3 -3" rotation="0 0 126.468" material="color:white; metalness:3; roughness:0.1; sphericalEnvMap:#torus" visible="true">
+      <a-animation easing="linear" attribute="rotation" dur="10000" to="0 0 360" repeat="indefinite"></a-animation>
+      </a-entity>
+      <a-entity id="dodecahedron" geometry="primitive: dodecahedron; radius: 2" position="10 2 -3" rotation="0 0 126.468" material="color:white;metalness:3;roughness:0.05;sphericalEnvMap:#dodec" visible="true" >
+        <a-animation easing="linear" attribute="rotation" dur="10000" to="0 0 360" repeat="indefinite"></a-animation>
+      </a-entity>
+      <a-entity id="dodec" geometry="primitive: dodecahedron; radius: 1" scale="2 1 5" position="2 7 -4" rotation="0 0 126.468" material="color:white;metalness:3;roughness:0.05;sphericalEnvMap:#dode2" visible="true" >
+        <a-animation easing="linear" attribute="rotation" dur="10000" to="0 0 360" repeat="indefinite"></a-animation>
+      </a-entity>
+      <a-entity id="plane" geometry= "primitive: plane; width:100; height:100" position="0 0 -4" rotation="-90 0 0"  material="color:white"></a-entity>
+      <a-entity id="sky" geometry="primitive: sphere; thetaLength: 90; radius: 20" material="color:black; side: back; height: 2048; width: 2048; shader: flat"></a-entity>
+        <a-text position= "0 1 0" texte.height="50" value="AEP"></a-text>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
